@@ -27,11 +27,11 @@ function Header() {
           className={`nav${open ? ' nav--open' : ''}`}
           aria-label="Principal"
         >
-          <a href="#producto" onClick={close}>
-            Producto
-          </a>
           <a href="#beneficios" onClick={close}>
             Beneficios
+          </a>
+          <a href="#producto" onClick={close}>
+            Producto
           </a>
           <a href="#ia" onClick={close}>
             IA
@@ -39,11 +39,11 @@ function Header() {
           <a href="#contacto" onClick={close}>
             Contacto
           </a>
-          <a href="#contacto" className="btn btn-header nav-demo" onClick={close}>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javierllorentee@gmail.com&su=Consulta%20sobre%20demo&body=Hola%20equipo%20de%20Quipu%2C%0A%0AMe%20encantar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20producto%2C%20si%C3%A9ntanse%20libres%20de%20contactarme%20a%20este%20mismo%20correo%20para%20coordinar%20una%20demo.%0A%0AMuchas%20gracias" className="btn btn-header nav-demo" onClick={close}>
             Solicitar demo
           </a>
         </nav>
-        <a href="#contacto" className="btn btn-header header-demo-desktop">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javierllorentee@gmail.com&su=Consulta%20sobre%20demo&body=Hola%20equipo%20de%20Quipu%2C%0A%0AMe%20encantar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20producto%2C%20si%C3%A9ntanse%20libres%20de%20contactarme%20a%20este%20mismo%20correo%20para%20coordinar%20una%20demo.%0A%0AMuchas%20gracias" className="btn btn-header header-demo-desktop">
           Solicitar demo
         </a>
         <button
@@ -283,11 +283,11 @@ function App() {
               plataforma, con IA que te ayuda a decidir con datos reales de tu empresa.
             </p>
             <div className="hero-actions">
-              <a href="#contacto" className="btn btn-primary-light">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javierllorentee@gmail.com&su=Consulta%20sobre%20demo&body=Hola%20equipo%20de%20Quipu%2C%0A%0AMe%20encantar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20producto%2C%20si%C3%A9ntanse%20libres%20de%20contactarme%20a%20este%20mismo%20correo%20para%20coordinar%20una%20demo.%0A%0AMuchas%20gracias" className="btn btn-primary-light">
                 Solicitar demo
               </a>
               <a
-                href="https://wa.me/"
+                href="https://api.whatsapp.com/send/?phone=5492216161594&text=Hola%2C+necesito+ayuda+con+Quipu&type=phone_number&app_absent=0"
                 className="btn btn-outline-light"
                 target="_blank"
                 rel="noreferrer"
@@ -297,7 +297,7 @@ function App() {
             </div>
             <a
               className="hero-linkedin"
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/javier-llorente-/"
               target="_blank"
               rel="noreferrer"
             >
@@ -339,6 +339,7 @@ function App() {
 
       <section className="section ia-section" id="ia">
         <div className="container ia-grid">
+          <IACopilotMock />
           <div className="ia-copy">
             <h2 className="section-title">Copiloto financiero con IA</h2>
             <p className="section-sub">
@@ -351,7 +352,6 @@ function App() {
               <li>Ahorra tiempo, gana claridad</li>
             </ul>
           </div>
-          <IACopilotMock />
         </div>
       </section>
 
@@ -362,11 +362,11 @@ function App() {
               Llevá el control financiero de tu PyME al siguiente nivel
             </h2>
             <div className="cta-panel__actions">
-              <a href="#top" className="cta-btn cta-btn--primary">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javierllorentee@gmail.com&su=Consulta%20sobre%20demo&body=Hola%20equipo%20de%20Quipu%2C%0A%0AMe%20encantar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20producto%2C%20si%C3%A9ntanse%20libres%20de%20contactarme%20a%20este%20mismo%20correo%20para%20coordinar%20una%20demo.%0A%0AMuchas%20gracias" className="cta-btn cta-btn--primary">
                 Solicitar demo
               </a>
               <a
-                href="https://wa.me/"
+                href="https://api.whatsapp.com/send/?phone=5492216161594&text=Hola%2C+necesito+ayuda+con+Quipu&type=phone_number&app_absent=0"
                 className="cta-btn cta-btn--secondary"
                 target="_blank"
                 rel="noreferrer"
@@ -401,7 +401,7 @@ function App() {
             </p>
           </div>
           <div className="footer-col footer-col--social">
-            <a href="#" className="footer-linkedin">
+            <a href="https://www.linkedin.com/in/javier-llorente-/" className="footer-linkedin">
               <svg
                 className="footer-linkedin-icon"
                 viewBox="0 0 24 24"
