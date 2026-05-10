@@ -1,16 +1,20 @@
-# React + Vite
+# Quipu Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page simple para presentar **Quipu**, una plataforma financiera pensada para PyMEs.
 
-Currently, two official plugins are available:
+## Qué muestra la landing
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+La página incluye información sobre:
 
-## React Compiler
+- Qué es Quipu y qué problema busca resolver.
+- Beneficios principales para la gestión financiera.
+- Funcionalidades de la plataforma.
+- Una sección sobre el copiloto financiero con IA.
+- Llamados a la acción para solicitar una demo.
+- Botones de contacto por WhatsApp y LinkedIn.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Sobre el proyecto
 
-## Expanding the ESLint configuration
+Este proyecto es una landing page pública, alojada en Vercel y conectada a un repositorio de GitHub.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+El objetivo es comunicar de forma clara la propuesta de Quipu, mostrando sus principales secciones y facilitando el contacto con el equipo.
