@@ -1,27 +1,94 @@
-# Quipu Landing Page
+# QUIPU Landing Page
 
-Landing page para presentar Quipu, una plataforma financiera pensada para PyMEs que necesitan ordenar su flujo de caja, cobros, pagos y reportes en un solo lugar.
+Landing page pública de QUIPU, un SaaS fintech con IA para PyMEs de LatAm que necesitan ordenar su caja, cobros, pagos, reportes y gestión financiera desde una sola plataforma.
 
-## Qué muestra la landing
+---
 
-<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/ffbd8f72-a5b6-4e18-9732-94a008d77158" />
-Imagen de vista principal en la landing.
+## Demo
 
-La página incluye información sobre:
+**Landing online:**  
+https://quipu-landingpage.vercel.app/
 
-- Qué es Quipu y qué problema busca resolver.
-- Beneficios principales para la gestión financiera.
-- Funcionalidades de la plataforma.
-- Una sección sobre el copiloto financiero con IA.
-- Planes disponibles para distintos tipos de PyMEs.
-- Llamados a la acción para solicitar una demo.
-- Botones de contacto por WhatsApp y LinkedIn.
+---
 
-<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/3a25cf5b-fc13-4486-97df-6dcd077e8dc3" />
-Imagen de la introdución al producto.
+## Qué es este proyecto
 
-## Sobre el proyecto
+Este repositorio contiene la landing page comercial de QUIPU.
 
-Este proyecto es una landing page pública, alojada en Vercel y conectada a un repositorio de GitHub.
+El objetivo de la landing es presentar de forma clara la propuesta de valor del producto, explicar sus principales beneficios, mostrar sus módulos clave y facilitar el contacto o solicitud de demo.
 
-El objetivo es comunicar de forma clara la propuesta de Quipu, mostrando sus principales secciones, planes disponibles y facilitando el contacto con el equipo.
+---
+
+## Qué comunica la landing
+
+La página está pensada para mostrar:
+
+- qué problema resuelve QUIPU;
+- beneficios principales para PyMEs;
+- funcionalidades de la plataforma;
+- copiloto financiero con IA;
+- planes disponibles;
+- llamados a la acción para solicitar una demo;
+- canales de contacto.
+
+---
+
+## Screenshots
+
+<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/c320aef0-c526-4a15-b729-078d6b7a2d86" />
+*Hero principal de la landing, con propuesta de valor y llamada a la acción.*
+
+<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/10be7900-da3c-4c30-99a1-0d01db5de9c9" />
+*Sección introductoria del producto, mostrando la plataforma en distintos dispositivos.*
+
+<img width="1366" height="371" alt="image" src="https://github.com/user-attachments/assets/6575e946-1c65-42eb-83d1-76131d1bc200" />
+*Sección de beneficios o funcionalidades principales de QUIPU.*
+
+<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/98ab2f78-1c3a-40ad-86ed-ac2580eb19bd" />
+*Sección de planes o llamada final a solicitar una demo.*
+
+---
+
+## Relación con el SaaS
+
+Esta landing acompaña al producto principal de QUIPU:
+
+**Repositorio del SaaS:**  
+https://github.com/javierllorente-HWorld/quipu-saas-b2b-ai-fintech
+
+**Demo del SaaS:**  
+https://quipu-saas-b2b-ai-fintech.vercel.app/inicio
+
+---
+
+## Stack
+
+- React
+- JavaScript
+- CSS
+- HTML
+- Vercel
+- GitHub
+
+---
+
+## Qué demuestra este proyecto
+
+Este proyecto demuestra la capacidad de presentar un producto digital desde una mirada comercial y de producto, no solo técnica.
+
+La landing busca comunicar con claridad:
+
+- el problema;
+- la solución;
+- los beneficios;
+- el producto;
+- la propuesta de valor;
+- el siguiente paso para un potencial usuario.
+
+---
+
+## Estado actual
+
+Landing funcional desplegada en Vercel como parte del ecosistema QUIPU.
+
+El proyecto fue desarrollado como complemento del SaaS principal y forma parte de un portfolio orientado a mostrar criterio de producto, comunicación, ejecución y presentación comercial.
