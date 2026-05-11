@@ -36,6 +36,9 @@ function Header() {
           <a href="#ia" onClick={close}>
             IA
           </a>
+          <a href="#planes" onClick={close}>
+            Planes
+          </a>
           <a href="#contacto" onClick={close}>
             Contacto
           </a>
@@ -200,9 +203,9 @@ function FeatureCards() {
   ]
 
   return (
-    <section className="cards-section" id="producto">
+    <section className="cards-section">
       <div className="container">
-        <div className="cards-grid">
+        <div className="cards-grid" id="beneficios">
           {items.map((item) => (
             <article key={item.title} className="feature-card">
               <div className="feature-card-icon" aria-hidden>
@@ -265,12 +268,118 @@ function IACopilotMock() {
   )
 }
 
+function PlanesSection() {
+  const planesWhatsappHref =
+    'https://api.whatsapp.com/send/?phone=5492216161594&text=Hola%2C+necesito+ayuda+con+Quipu&type=phone_number&app_absent=0'
+
+  return (
+    <section
+      className="section planes-section"
+      id="planes"
+      aria-labelledby="planes-heading"
+    >
+      <div className="container">
+        <header className="planes-header">
+          <h2 className="section-title planes-title" id="planes-heading">
+            Elegí el plan ideal para tu PyME
+          </h2>
+          <p className="section-sub planes-sub">
+            Todos los planes incluyen acceso a la plataforma, reportes con IA y
+            actualizaciones en tiempo real.
+          </p>
+        </header>
+        <div className="planes-grid">
+          <article className="plan-card">
+            <h3 className="plan-card__name">Básico</h3>
+            <p className="plan-card__desc">
+              Ideal para PyMEs que quieren ordenar sus finanzas.
+            </p>
+            <div className="plan-card__price">
+              <span className="plan-card__amount">$29.000</span>
+              <span className="plan-card__period">por mes</span>
+            </div>
+            <ul className="plan-card__features">
+              <li>Gestión de caja</li>
+              <li>Cobros y pagos</li>
+              <li>Reportes básicos</li>
+              <li>Hasta 5 GB de almacenamiento</li>
+              <li>Soporte por email</li>
+            </ul>
+            <a
+              href={planesWhatsappHref}
+              className="plan-card__cta plan-card__cta--outline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Comenzar ahora
+            </a>
+          </article>
+          <article className="plan-card plan-card--featured">
+            <span className="plan-card__badge">Más elegido</span>
+            <h3 className="plan-card__name">Profesional</h3>
+            <p className="plan-card__desc">
+              Para PyMEs que buscan más control y automatización.
+            </p>
+            <div className="plan-card__price">
+              <span className="plan-card__amount">$59.000</span>
+              <span className="plan-card__period">por mes</span>
+            </div>
+            <ul className="plan-card__features">
+              <li>Todo lo del plan Básico</li>
+              <li>Reportes avanzados con IA</li>
+              <li>Presupuestos y proyecciones</li>
+              <li>Integraciones contables</li>
+              <li>Hasta 50 GB de almacenamiento</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a
+              href={planesWhatsappHref}
+              className="plan-card__cta plan-card__cta--primary"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Comenzar ahora
+            </a>
+          </article>
+          <article className="plan-card">
+            <h3 className="plan-card__name">Empresarial</h3>
+            <p className="plan-card__desc">
+              Para empresas que necesitan escalabilidad y acompañamiento.
+            </p>
+            <div className="plan-card__price">
+              <span className="plan-card__amount">$99.000</span>
+              <span className="plan-card__period">por mes</span>
+            </div>
+            <ul className="plan-card__features">
+              <li>Todo lo del plan Profesional</li>
+              <li>IA personalizada</li>
+              <li>Múltiples empresas y usuarios</li>
+              <li>Almacenamiento ilimitado</li>
+              <li>API y exportaciones avanzadas</li>
+              <li>Atención al cliente 24/7</li>
+            </ul>
+            <a
+              href={planesWhatsappHref}
+              className="plan-card__cta plan-card__cta--outline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Comenzar ahora
+            </a>
+          </article>
+        </div>
+        <p className="planes-footnote">Cancelá cuando quieras. Sin permanencia.</p>
+      </div>
+    </section>
+  )
+}
+
 function App() {
   return (
     <div className="quipu" id="top">
       <Header />
 
-      <section className="hero" id="beneficios">
+      <section className="hero">
         <div className="hero-bg" aria-hidden />
         <div className="container hero-grid">
           <div className="hero-copy">
@@ -286,28 +395,12 @@ function App() {
               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javierllorentee@gmail.com&su=Consulta%20sobre%20demo&body=Hola%20equipo%20de%20Quipu%2C%0A%0AMe%20encantar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20producto%2C%20si%C3%A9ntanse%20libres%20de%20contactarme%20a%20este%20mismo%20correo%20para%20coordinar%20una%20demo.%0A%0AMuchas%20gracias" className="btn btn-primary-light">
                 Solicitar demo
               </a>
-              <a
-                href="https://api.whatsapp.com/send/?phone=5492216161594&text=Hola%2C+necesito+ayuda+con+Quipu&type=phone_number&app_absent=0"
-                className="btn btn-outline-light"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Contactar por WhatsApp
-              </a>
             </div>
-            <a
-              className="hero-linkedin"
-              href="https://www.linkedin.com/in/javier-llorente-/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Conócenos en LinkedIn →
-            </a>
           </div>
           <div className="hero-visual">
             <img
               className="hero-visual-img"
-              src="/inicio_quipu.png"
+              src="/pc-imagen-inicio-quipu.png"
               alt="Vista principal de Quipu"
               decoding="async"
               fetchPriority="high"
@@ -318,7 +411,7 @@ function App() {
 
       <FeatureCards />
 
-      <section className="section platform-section">
+      <section className="section platform-section" id="producto">
         <div className="container platform-grid">
           <div className="platform-copy">
             <h2 className="section-title">Todo en una sola plataforma</h2>
@@ -354,6 +447,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <PlanesSection />
 
       <section className="cta-band" id="contacto">
         <div className="container">
