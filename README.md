@@ -32,22 +32,28 @@ La página está pensada para mostrar:
 - canales de contacto.
 
 ---
-
 ## Screenshots
 
 <img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/c320aef0-c526-4a15-b729-078d6b7a2d86" />
+
 *Hero principal de la landing, con propuesta de valor y llamada a la acción.*
-<br>
+
+<br><br>
 
 <img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/10be7900-da3c-4c30-99a1-0d01db5de9c9" />
+
 *Sección introductoria del producto, mostrando la plataforma en distintos dispositivos.*
-<br>
+
+<br><br>
 
 <img width="1366" height="371" alt="image" src="https://github.com/user-attachments/assets/6575e946-1c65-42eb-83d1-76131d1bc200" />
+
 *Sección de beneficios o funcionalidades principales de QUIPU.*
-<br>
+
+<br><br>
 
 <img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/98ab2f78-1c3a-40ad-86ed-ac2580eb19bd" />
+
 *Sección de planes o llamada final a solicitar una demo.*
 
 ---
