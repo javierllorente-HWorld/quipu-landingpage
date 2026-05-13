@@ -42,11 +42,11 @@ function Header() {
           <a href="#contacto" onClick={close}>
             Contacto
           </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javierllorentee@gmail.com&su=Consulta%20sobre%20demo&body=Hola%20equipo%20de%20Quipu%2C%0A%0AMe%20encantar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20producto%2C%20si%C3%A9ntanse%20libres%20de%20contactarme%20a%20este%20mismo%20correo%20para%20coordinar%20una%20demo.%0A%0AMuchas%20gracias" className="btn btn-header nav-demo" onClick={close}>
+          <a href="https://cal.com/javierllorente/40min" className="btn btn-header nav-demo" onClick={close}>
             Solicitar demo
           </a>
         </nav>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javierllorentee@gmail.com&su=Consulta%20sobre%20demo&body=Hola%20equipo%20de%20Quipu%2C%0A%0AMe%20encantar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20producto%2C%20si%C3%A9ntanse%20libres%20de%20contactarme%20a%20este%20mismo%20correo%20para%20coordinar%20una%20demo.%0A%0AMuchas%20gracias" className="btn btn-header header-demo-desktop">
+        <a href="https://cal.com/javierllorente/40min" className="btn btn-header header-demo-desktop">
           Solicitar demo
         </a>
         <button
@@ -292,7 +292,7 @@ function PlanesSection() {
           <article className="plan-card">
             <h3 className="plan-card__name">Básico</h3>
             <p className="plan-card__desc">
-              Ideal para PyMEs que quieren ordenar sus finanzas.
+              Organizá tus finanzas diarias de forma simple y clara.
             </p>
             <div className="plan-card__price">
               <span className="plan-card__amount">$29.000</span>
@@ -318,7 +318,7 @@ function PlanesSection() {
             <span className="plan-card__badge">Más elegido</span>
             <h3 className="plan-card__name">Profesional</h3>
             <p className="plan-card__desc">
-              Para PyMEs que buscan más control y automatización.
+              Automatizá procesos y tomá mejores decisiones con más control.
             </p>
             <div className="plan-card__price">
               <span className="plan-card__amount">$59.000</span>
@@ -344,7 +344,7 @@ function PlanesSection() {
           <article className="plan-card">
             <h3 className="plan-card__name">Empresarial</h3>
             <p className="plan-card__desc">
-              Para empresas que necesitan escalabilidad y acompañamiento.
+              Escalá tu gestión financiera con soporte y funcionalidades avanzadas.
             </p>
             <div className="plan-card__price">
               <span className="plan-card__amount">$99.000</span>
@@ -392,7 +392,7 @@ function App() {
               plataforma, con IA que te ayuda a decidir con datos reales de tu empresa.
             </p>
             <div className="hero-actions">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javierllorentee@gmail.com&su=Consulta%20sobre%20demo&body=Hola%20equipo%20de%20Quipu%2C%0A%0AMe%20encantar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20producto%2C%20si%C3%A9ntanse%20libres%20de%20contactarme%20a%20este%20mismo%20correo%20para%20coordinar%20una%20demo.%0A%0AMuchas%20gracias" className="btn btn-primary-light">
+              <a href="https://cal.com/javierllorente/40min" className="btn btn-primary-light">
                 Solicitar demo
               </a>
             </div>
@@ -457,7 +457,7 @@ function App() {
               Llevá el control financiero de tu PyME al siguiente nivel
             </h2>
             <div className="cta-panel__actions">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javierllorentee@gmail.com&su=Consulta%20sobre%20demo&body=Hola%20equipo%20de%20Quipu%2C%0A%0AMe%20encantar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20producto%2C%20si%C3%A9ntanse%20libres%20de%20contactarme%20a%20este%20mismo%20correo%20para%20coordinar%20una%20demo.%0A%0AMuchas%20gracias" className="cta-btn cta-btn--primary">
+              <a href="https://cal.com/javierllorente/40min" className="cta-btn cta-btn--primary">
                 Solicitar demo
               </a>
               <a
