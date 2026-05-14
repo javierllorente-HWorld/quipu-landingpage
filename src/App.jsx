@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function Logo() {
@@ -27,26 +27,26 @@ function Header() {
           className={`nav${open ? ' nav--open' : ''}`}
           aria-label="Principal"
         >
-          <a href="#beneficios" onClick={close}>
-            Beneficios
-          </a>
           <a href="#producto" onClick={close}>
             Producto
           </a>
-          <a href="#ia" onClick={close}>
-            IA
+          <a href="#beneficios" onClick={close}>
+            Beneficios
           </a>
           <a href="#planes" onClick={close}>
             Planes
           </a>
+          <a href="#preguntas" onClick={close}>
+            Preguntas
+          </a>
           <a href="#contacto" onClick={close}>
             Contacto
           </a>
-          <a href="https://cal.com/javierllorente/40min" className="btn btn-header nav-demo" onClick={close}>
+          <a href="https://cal.com/javierllorente/40min" target="_blank" rel="noopener noreferrer" className="btn btn-header nav-demo" onClick={close}>
             Solicitar demo
           </a>
         </nav>
-        <a href="https://cal.com/javierllorente/40min" className="btn btn-header header-demo-desktop">
+        <a href="https://cal.com/javierllorente/40min" target="_blank" rel="noopener noreferrer" className="btn btn-header header-demo-desktop">
           Solicitar demo
         </a>
         <button
@@ -62,6 +62,248 @@ function Header() {
         </button>
       </div>
     </header>
+  )
+}
+
+const IMPACTO_REVIEWS = [
+  {
+    id: 'impacto-review-1',
+    quote:
+      'Ahora entiendo la caja del negocio sin revisar tres planillas distintas.',
+    citeLine: 'Mariana R. · Dueña de comercio',
+  },
+  {
+    id: 'impacto-review-2',
+    quote:
+      'Me ayudó a ordenar cobros, pagos y reportes en un solo lugar.',
+    citeLine: 'Diego M. · Servicios profesionales',
+  },
+  {
+    id: 'impacto-review-3',
+    quote:
+      'La IA hace más fácil detectar problemas antes de fin de mes.',
+    citeLine: 'Sofía L. · PyME en crecimiento',
+  },
+  {
+    id: 'impacto-review-4',
+    quote:
+      'Pasamos de reportes manuales a una visión clara de ingresos y gastos.',
+    citeLine: 'Pablo G. · Distribuidora familiar',
+  },
+  {
+    id: 'impacto-review-5',
+    quote:
+      'Me permite anticipar pagos y tomar decisiones con más tranquilidad.',
+    citeLine: 'Lucía T. · Agencia de marketing',
+  },
+  {
+    id: 'impacto-review-6',
+    quote:
+      'El tablero es simple, claro y muy útil para revisar el negocio.',
+    citeLine: 'Andrés V. · Empresa de servicios',
+  },
+]
+
+function PressOutletMark({ id }) {
+  switch (id) {
+    case 'infobae':
+      return (
+        <span
+          className="press-mentions__mark press-mentions__mark--infobae"
+          aria-label="Infobae"
+        >
+          <span className="press-mentions__inf-a">Info</span>
+          <span className="press-mentions__inf-b">bae</span>
+        </span>
+      )
+    case 'iproup':
+      return (
+        <span
+          className="press-mentions__mark press-mentions__mark--iproup"
+          aria-label="iProUP"
+        >
+          <span className="press-mentions__ipr-i">i</span>
+          <span className="press-mentions__ipr-pro">Pro</span>
+          <span className="press-mentions__ipr-up">UP</span>
+        </span>
+      )
+    case 'apertura':
+      return (
+        <span
+          className="press-mentions__mark press-mentions__mark--apertura"
+          aria-label="Apertura"
+        >
+          Apertura
+        </span>
+      )
+    case 'americaeconomia':
+      return (
+        <span
+          className="press-mentions__mark press-mentions__mark--america"
+          aria-label="AméricaEconomía"
+        >
+          <span className="press-mentions__am-l1">América</span>
+          <span className="press-mentions__am-l2">Economía</span>
+        </span>
+      )
+    case 'contxto':
+      return (
+        <span
+          className="press-mentions__mark press-mentions__mark--contxto"
+          aria-label="Contxto"
+        >
+          <span className="press-mentions__cx-pre">cont</span>
+          <span className="press-mentions__cx-x">x</span>
+          <span className="press-mentions__cx-post">to</span>
+        </span>
+      )
+    case 'bloomberglinea':
+      return (
+        <span
+          className="press-mentions__mark press-mentions__mark--bloomlinea"
+          aria-label="Bloomberg Línea"
+        >
+          <span className="press-mentions__bl-top">Bloomberg</span>
+          <span className="press-mentions__bl-bot">Línea</span>
+        </span>
+      )
+    default:
+      return null
+  }
+}
+
+const PRESS_OUTLET_IDS = [
+  'infobae',
+  'iproup',
+  'apertura',
+  'americaeconomia',
+  'contxto',
+  'bloomberglinea',
+]
+
+function readSlidesPerView() {
+  if (typeof window === 'undefined') return 2
+  /* Mobile: 1 · Tablet/desktop: 2 (sin tercera card recortada; ancho real vía .impacto-carousel__cq + cqw) */
+  if (window.matchMedia('(max-width: 720px)').matches) return 1
+  return 2
+}
+
+function ImpactoSection() {
+  const metrics = [
+    { value: '+120', title: 'PyMEs gestionadas' },
+    { value: '35%', title: 'Menos tiempo en reportes' },
+    { value: '4.8/5', title: 'Satisfacción promedio' },
+    { value: '24/7', title: 'Visibilidad del negocio' },
+  ]
+
+  const [slidesPerView, setSlidesPerView] = useState(readSlidesPerView)
+  const [start, setStart] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+
+  useEffect(() => {
+    const onResize = () => setSlidesPerView(readSlidesPerView())
+    onResize()
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  useEffect(() => {
+    const maxStart = Math.max(0, IMPACTO_REVIEWS.length - slidesPerView)
+    setStart((s) => Math.min(s, maxStart))
+  }, [slidesPerView])
+
+  useEffect(() => {
+    if (isPaused) return undefined
+    const id = window.setInterval(() => {
+      setStart((s) => {
+        const mx = Math.max(0, IMPACTO_REVIEWS.length - slidesPerView)
+        return s >= mx ? 0 : s + 1
+      })
+    }, 4500)
+    return () => clearInterval(id)
+  }, [isPaused, slidesPerView])
+
+  const maxStart = Math.max(0, IMPACTO_REVIEWS.length - slidesPerView)
+
+  return (
+    <section
+      className="section impacto-section"
+      id="impacto"
+      aria-labelledby="impacto-heading"
+    >
+      <div className="container">
+        <div className="impacto-inner">
+          <header className="impacto-header">
+            <h2 className="section-title" id="impacto-heading">
+              Impacto de Quipu
+            </h2>
+          </header>
+          <div className="impacto-grid">
+            {metrics.map((item) => (
+              <article key={item.title} className="impacto-card">
+                <p className="impacto-card__value">{item.value}</p>
+                <h3 className="impacto-card__title">{item.title}</h3>
+              </article>
+            ))}
+          </div>
+          <h3 className="impacto-reviews-heading" id="impacto-reviews-heading">
+            Lo que dicen nuestros clientes
+          </h3>
+          <div
+            className="impacto-carousel"
+            role="region"
+            aria-roledescription="carrusel"
+            aria-labelledby="impacto-reviews-heading"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <div
+              className="impacto-carousel__viewport"
+              style={{
+                '--impacto-spv': slidesPerView,
+                '--impacto-n': IMPACTO_REVIEWS.length,
+              }}
+            >
+              <div className="impacto-carousel__cq">
+                <ul
+                  className="impacto-carousel__track"
+                  style={{
+                    transform: `translateX(calc(-1 * ${start} * (var(--slide) + var(--gap))))`,
+                  }}
+                >
+                  {IMPACTO_REVIEWS.map((r) => (
+                    <li
+                      key={r.id}
+                      className="impacto-review impacto-carousel__slide"
+                    >
+                      <p className="impacto-review__stars" aria-hidden="true">
+                        ★★★★★
+                      </p>
+                      <blockquote className="impacto-review__quote">
+                        <p>{r.quote}</p>
+                      </blockquote>
+                      <cite className="impacto-review__cite">{r.citeLine}</cite>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="impacto-carousel__dots" aria-label="Posición en reseñas">
+              {Array.from({ length: maxStart + 1 }, (_, i) => (
+                <button
+                  key={`impacto-dot-${i}`}
+                  type="button"
+                  aria-label={`Mostrar reseñas desde la posición ${i + 1}`}
+                  aria-current={start === i ? 'true' : undefined}
+                  className={`impacto-carousel__dot${start === i ? ' impacto-carousel__dot--active' : ''}`}
+                  onClick={() => setStart(i)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -203,7 +445,7 @@ function FeatureCards() {
   ]
 
   return (
-    <section className="cards-section">
+    <section className="section cards-section">
       <div className="container">
         <div className="cards-grid" id="beneficios">
           {items.map((item) => (
@@ -268,9 +510,59 @@ function IACopilotMock() {
   )
 }
 
+function HowSection() {
+  const steps = [
+    {
+      title: 'Conectá tu información',
+      text: 'Centralizá ingresos, gastos y movimientos.',
+    },
+    {
+      title: 'Entendé tus números con IA',
+      text: 'Visualizá caja, rentabilidad y evolución.',
+    },
+    {
+      title: 'Tomá mejores decisiones',
+      text: 'Anticipá problemas y planificá con control.',
+    },
+  ]
+
+  return (
+    <section
+      className="section how-section"
+      id="como-funciona"
+      aria-labelledby="how-heading"
+    >
+      <div className="container">
+        <header className="how-header">
+          <h2 className="section-title" id="how-heading">
+            ¿Cómo funciona Quipu?
+          </h2>
+          <p className="section-sub how-sub">
+            Tres pasos para ordenar tus finanzas y decidir mejor.
+          </p>
+        </header>
+        <ol className="how-steps">
+          {steps.map((step, index) => (
+            <li key={step.title} className="how-step">
+              <div className="how-step__surface">
+                <div className="how-step__head">
+                  <span className="how-step__num" aria-hidden>
+                    {index + 1}
+                  </span>
+                </div>
+                <h3 className="how-step__title">{step.title}</h3>
+                <p className="how-step__text">{step.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}
+
 function PlanesSection() {
-  const planesWhatsappHref =
-    'https://api.whatsapp.com/send/?phone=5492216161594&text=Hola%2C+necesito+ayuda+con+Quipu&type=phone_number&app_absent=0'
+  const planesDemoHref = 'https://cal.com/javierllorente/seleccion-de-plan-quipu'
 
   return (
     <section
@@ -283,20 +575,16 @@ function PlanesSection() {
           <h2 className="section-title planes-title" id="planes-heading">
             Elegí el plan ideal para tu PyME
           </h2>
-          <p className="section-sub planes-sub">
-            Todos los planes incluyen acceso a la plataforma, reportes con IA y
-            actualizaciones en tiempo real.
-          </p>
         </header>
         <div className="planes-grid">
           <article className="plan-card">
             <h3 className="plan-card__name">Básico</h3>
             <p className="plan-card__desc">
-              Organizá tus finanzas diarias de forma simple y clara.
+              Para ordenar tus finanzas diarias.
             </p>
             <div className="plan-card__price">
               <span className="plan-card__amount">$29.000</span>
-              <span className="plan-card__period">por mes</span>
+              <span className="plan-card__period">/ mes</span>
             </div>
             <ul className="plan-card__features">
               <li>Gestión de caja</li>
@@ -305,24 +593,26 @@ function PlanesSection() {
               <li>Hasta 5 GB de almacenamiento</li>
               <li>Soporte por email</li>
             </ul>
-            <a
-              href={planesWhatsappHref}
-              className="plan-card__cta plan-card__cta--outline"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Comenzar ahora
-            </a>
+            <div className="plan-card__cta-wrap">
+              <a
+                href={planesDemoHref}
+                className="plan-card__cta plan-card__cta--outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agendar demo
+              </a>
+            </div>
           </article>
           <article className="plan-card plan-card--featured">
             <span className="plan-card__badge">Más elegido</span>
             <h3 className="plan-card__name">Profesional</h3>
             <p className="plan-card__desc">
-              Automatizá procesos y tomá mejores decisiones con más control.
+              Para automatizar y decidir con más control.
             </p>
             <div className="plan-card__price">
               <span className="plan-card__amount">$59.000</span>
-              <span className="plan-card__period">por mes</span>
+              <span className="plan-card__period">/ mes</span>
             </div>
             <ul className="plan-card__features">
               <li>Todo lo del plan Básico</li>
@@ -332,23 +622,25 @@ function PlanesSection() {
               <li>Hasta 50 GB de almacenamiento</li>
               <li>Soporte prioritario</li>
             </ul>
-            <a
-              href={planesWhatsappHref}
-              className="plan-card__cta plan-card__cta--primary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Comenzar ahora
-            </a>
+            <div className="plan-card__cta-wrap plan-card__cta-wrap--featured">
+              <a
+                href={planesDemoHref}
+                className="plan-card__cta plan-card__cta--primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agendar demo
+              </a>
+            </div>
           </article>
           <article className="plan-card">
             <h3 className="plan-card__name">Empresarial</h3>
             <p className="plan-card__desc">
-              Escalá tu gestión financiera con soporte y funcionalidades avanzadas.
+              Para escalar con soporte avanzado.
             </p>
             <div className="plan-card__price">
               <span className="plan-card__amount">$99.000</span>
-              <span className="plan-card__period">por mes</span>
+              <span className="plan-card__period">/ mes</span>
             </div>
             <ul className="plan-card__features">
               <li>Todo lo del plan Profesional</li>
@@ -358,17 +650,110 @@ function PlanesSection() {
               <li>API y exportaciones avanzadas</li>
               <li>Atención al cliente 24/7</li>
             </ul>
-            <a
-              href={planesWhatsappHref}
-              className="plan-card__cta plan-card__cta--outline"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Comenzar ahora
-            </a>
+            <div className="plan-card__cta-wrap">
+              <a
+                href={planesDemoHref}
+                className="plan-card__cta plan-card__cta--outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agendar demo
+              </a>
+            </div>
           </article>
         </div>
-        <p className="planes-footnote">Cancelá cuando quieras. Sin permanencia.</p>
+        <p className="planes-footnote">
+          * En la demo analizamos tu operación, te orientamos sobre el plan más adecuado y te mostramos cómo Quipu puede ayudarte a ordenar tu gestión financiera. Sin permanencia.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function FaqSection() {
+  const items = [
+    {
+      q: '¿Cuánto tiempo lleva empezar a usar Quipu?',
+      a: 'No necesitás una implementación larga. En una demo podemos entender tu operación, revisar tus necesidades y mostrarte cómo Quipu puede ayudarte a ordenar ingresos, gastos, cobros y pagos.',
+    },
+    {
+      q: '¿Tengo que cambiar mi forma de trabajar?',
+      a: 'No necesariamente. Quipu está pensado para adaptarse a procesos simples de PyMEs y ayudarte a centralizar la información sin sumar complejidad.',
+    },
+    {
+      q: '¿Qué pasa si hoy manejo todo con Excel o planillas?',
+      a: 'Quipu te ayuda a pasar de información dispersa a una visión más clara y ordenada de tu negocio, reduciendo tareas manuales y errores frecuentes.',
+    },
+    {
+      q: '¿Qué valor aporta Quipu frente a mi contador?',
+      a: 'Quipu no reemplaza a tu contador: lo potencia. La plataforma centraliza la información financiera, ordena ingresos, gastos, cobros y pagos, y permite apoyarse en IA para analizar datos, detectar desvíos y preparar mejores reportes. Así vos y tu contador pueden trabajar con más contexto y menos tareas manuales.',
+    },
+    {
+      q: '¿Mis datos financieros están seguros?',
+      a: 'Sí. La información financiera debe manejarse con buenas prácticas de seguridad, acceso controlado y protección de datos.',
+    },
+    {
+      q: '¿Qué incluye la demo?',
+      a: 'Revisamos tu caso, te mostramos cómo funciona la plataforma y vemos qué plan se adapta mejor a tu operación.',
+    },
+  ]
+
+  return (
+    <section
+      className="section faq-section"
+      id="preguntas"
+      aria-labelledby="preguntas-heading"
+    >
+      <div className="container">
+        <div className="faq-panel">
+          <header className="faq-panel__head">
+            <h2 className="section-title faq-title" id="preguntas-heading">
+              Preguntas frecuentes
+            </h2>
+            <p className="section-sub faq-sub">
+              Antes de agendar una demo, conocé cómo Quipu se adapta a tu forma de trabajar.
+            </p>
+          </header>
+          <div className="faq-list">
+            {items.map((item) => (
+              <details key={item.q} className="faq-item">
+                <summary className="faq-summary">{item.q}</summary>
+                <div className="faq-body">
+                  <p>{item.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function PressMentionsSection() {
+  return (
+    <section
+      className="press-mentions-section"
+      id="medios"
+      aria-labelledby="press-mentions-heading"
+    >
+      <div className="container press-mentions">
+        <header className="press-mentions__header">
+          <h2 className="press-mentions__title" id="press-mentions-heading">
+            Medios donde nos mencionan
+          </h2>
+          <p className="press-mentions__sub">
+            Quipu aparece en medios y comunidades de negocios, tecnología y PyMEs
+            de Latinoamérica.
+          </p>
+        </header>
+        <ul className="press-mentions__logos">
+          {PRESS_OUTLET_IDS.map((id) => (
+            <li key={id} className="press-mentions__logo-item">
+              <PressOutletMark id={id} />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )
@@ -392,8 +777,11 @@ function App() {
               plataforma, con IA que te ayuda a decidir con datos reales de tu empresa.
             </p>
             <div className="hero-actions">
-              <a href="https://cal.com/javierllorente/40min" className="btn btn-primary-light">
+              <a href="https://cal.com/javierllorente/40min" target="_blank" rel="noopener noreferrer" className="btn btn-primary-light">
                 Solicitar demo
+              </a>
+              <a href="#como-funciona" className="btn btn-hero-secondary">
+                Ver cómo funciona
               </a>
             </div>
           </div>
@@ -409,18 +797,18 @@ function App() {
         </div>
       </section>
 
-      <FeatureCards />
+      <PressMentionsSection />
 
-      <section className="section platform-section" id="producto">
+      <section className="section platform-section platform-section--product" id="producto">
         <div className="container platform-grid">
           <div className="platform-copy">
-            <h2 className="section-title">Todo en una sola plataforma</h2>
-            <p className="section-sub">
+            <h2 className="section-title platform-copy__title">Todo en una sola plataforma</h2>
+            <p className="section-sub platform-copy__lead">
               Unificá tus procesos financieros en un solo lugar.
               <br />
               Menos tareas manuales, más control y mejor toma de decisiones.
             </p>
-            <ul className="checklist">
+            <ul className="checklist checklist--platform">
               <li>Información actualizada en tiempo real</li>
               <li>Menos errores y tareas repetitivas</li>
               <li>Decisiones más rápidas y seguras</li>
@@ -430,16 +818,18 @@ function App() {
         </div>
       </section>
 
+      <FeatureCards />
+
       <section className="section ia-section" id="ia">
         <div className="container ia-grid">
           <IACopilotMock />
           <div className="ia-copy">
-            <h2 className="section-title">Copiloto financiero con IA</h2>
-            <p className="section-sub">
+            <h2 className="section-title ia-copy__title">Copiloto financiero con IA</h2>
+            <p className="section-sub ia-copy__lead">
               Hacé preguntas y obtené respuestas al instante usando los datos reales
               de tu empresa.
             </p>
-            <ul className="checklist checklist--compact">
+            <ul className="checklist checklist--compact checklist--ia">
               <li>Responde con datos de tu negocio</li>
               <li>Recomendaciones accionables</li>
               <li>Ahorra tiempo, gana claridad</li>
@@ -448,7 +838,13 @@ function App() {
         </div>
       </section>
 
+      <HowSection />
+
+      <ImpactoSection />
+
       <PlanesSection />
+
+      <FaqSection />
 
       <section className="cta-band" id="contacto">
         <div className="container">
@@ -457,7 +853,7 @@ function App() {
               Llevá el control financiero de tu PyME al siguiente nivel
             </h2>
             <div className="cta-panel__actions">
-              <a href="https://cal.com/javierllorente/40min" className="cta-btn cta-btn--primary">
+              <a href="https://cal.com/javierllorente/40min" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn--primary">
                 Solicitar demo
               </a>
               <a
