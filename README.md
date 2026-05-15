@@ -34,25 +34,25 @@ La página está pensada para mostrar:
 ---
 ## Screenshots
 
-<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/c320aef0-c526-4a15-b729-078d6b7a2d86" />
+<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/eeb7c7dc-48ea-4872-8446-1beb74126855" />
 
 *Hero principal de la landing, con propuesta de valor y llamada a la acción.*
 
 <br><br>
 
-<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/10be7900-da3c-4c30-99a1-0d01db5de9c9" />
+<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/8d650346-8b1c-4c11-9616-ab0d86a04266" />
 
 *Sección introductoria del producto, mostrando la plataforma en distintos dispositivos.*
 
 <br><br>
 
-<img width="1366" height="371" alt="image" src="https://github.com/user-attachments/assets/6575e946-1c65-42eb-83d1-76131d1bc200" />
+<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/a91680e2-7135-4663-83a4-936995daa0fc" />
 
 *Sección de beneficios o funcionalidades principales de QUIPU.*
 
 <br><br>
 
-<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/98ab2f78-1c3a-40ad-86ed-ac2580eb19bd" />
+<img width="1366" height="613" alt="image" src="https://github.com/user-attachments/assets/08b16199-d0c2-47a4-a3fc-dff450b23027" />
 
 *Sección de planes o llamada final a solicitar una demo.*
 
