@@ -69,5 +69,6 @@ Forma parte del ecosistema QUIPU junto con el SaaS principal, y funciona como pi
 ---
 
 ## Demo
-Landing online: https://quipu-landingpage.vercel.app/
-Repositorio del SaaS: https://github.com/javierllorente-HWorld/quipu-saas-b2b-ai-fintech
+
+- Landing online: https://quipu-landingpage.vercel.app/
+- Repositorio del SaaS: https://github.com/javierllorente-HWorld/quipu-saas-b2b-ai-fintech
