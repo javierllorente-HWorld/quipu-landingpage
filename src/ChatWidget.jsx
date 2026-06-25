@@ -6,6 +6,19 @@ const INITIAL_MESSAGE = {
   content: '¡Hola! Soy el asistente virtual de Quipu. ¿En qué te puedo ayudar?',
 }
 
+function escapeHtml(text) {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+}
+
+function formatAssistantMessage(text) {
+  return escapeHtml(text)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br/>')
+}
+
 function ChatIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden focusable="false" className="chat-widget-fab-icon">
@@ -113,7 +126,11 @@ function ChatWidget() {
           <div className="chat-widget-messages">
             {messages.map((message, index) => (
               <div key={index} className={`chat-widget-bubble chat-widget-bubble--${message.role}`}>
-                {message.content}
+                {message.role === 'assistant' ? (
+                  <span dangerouslySetInnerHTML={{ __html: formatAssistantMessage(message.content) }} />
+                ) : (
+                  message.content
+                )}
               </div>
             ))}
             {isLoading && (
