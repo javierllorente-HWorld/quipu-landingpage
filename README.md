@@ -59,6 +59,19 @@ Landing page pública de QUIPU, un SaaS fintech con IA para PyMEs de LatAm que n
 - GitHub
 
 ---
+## Versiones
+
+### v2.0.0 - Landing Quipu + AI Assistant
+- Sistema de diseño normalizado
+- Cards de beneficios con estadísticas
+- Asistente virtual con IA (OpenAI GPT-4o-mini)
+- Desarrollada con Claude Code (Anthropic)
+
+### v1.1.0 - Landing Quipu
+- Primera versión funcional de la landing
+- Desarrollada con Cursor
+
+---
 
 ## Estado del proyecto
 
