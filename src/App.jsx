@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import ChatWidget from './ChatWidget.jsx'
 
 function Logo() {
   return (
@@ -915,6 +916,8 @@ function App() {
           </div>
         </div>
       </footer>
+
+      <ChatWidget />
     </div>
   )
 }
