@@ -165,14 +165,17 @@ function ChatWidget() {
         </div>
       )}
 
-      <button
-        type="button"
-        className="chat-widget-fab"
-        aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat'}
-        onClick={() => setIsOpen((open) => !open)}
-      >
-        {isOpen ? <CloseIcon /> : <ChatIcon />}
-      </button>
+      {!isOpen && (
+        <button
+          type="button"
+          className="chat-widget-fab"
+          aria-label="Abrir chat"
+          onClick={() => setIsOpen(true)}
+        >
+          <ChatIcon />
+          <span>Hablar con Quipu</span>
+        </button>
+      )}
     </div>
   )
 }
