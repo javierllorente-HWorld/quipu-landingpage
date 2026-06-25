@@ -312,6 +312,7 @@ function FeatureCards() {
     {
       title: 'Caja',
       text: 'Visibilidad en tiempo real de tu posición de caja.',
+      stat: { value: '24/7', label: 'visibilidad anticipada' },
       icon: (
         <svg
           className="feature-card-svg"
@@ -341,6 +342,7 @@ function FeatureCards() {
     {
       title: 'Cobros',
       text: 'Controlá tus cuentas por cobrar y reducí la mora.',
+      stat: { value: '35%', label: 'menos mora promedio' },
       icon: (
         <svg
           className="feature-card-svg"
@@ -381,6 +383,7 @@ function FeatureCards() {
     {
       title: 'Pagos',
       text: 'Programá pagos, aprobá y evitá vencimientos.',
+      stat: { value: '0', label: 'vencimientos no planificados' },
       icon: (
         <svg
           className="feature-card-svg"
@@ -414,6 +417,7 @@ function FeatureCards() {
     {
       title: 'Reportes + IA',
       text: 'Reportes confiables y respuestas al instante con IA.',
+      stat: { value: '10x', label: 'más rápido que Excel' },
       icon: (
         <svg
           className="feature-card-svg"
@@ -456,6 +460,11 @@ function FeatureCards() {
               <div className="feature-card-body">
                 <h3 className="feature-card-title">{item.title}</h3>
                 <p className="feature-card-desc">{item.text}</p>
+                <div className="feature-card-divider" aria-hidden="true" />
+                <div className="feature-card-stat">
+                  <p className="feature-card-stat__value">{item.stat.value}</p>
+                  <p className="feature-card-stat__label">{item.stat.label}</p>
+                </div>
               </div>
             </article>
           ))}

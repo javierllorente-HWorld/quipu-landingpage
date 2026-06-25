@@ -1393,6 +1393,40 @@
   text-wrap: pretty;
 }
 
+.cards-section .feature-card-divider {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid var(--q-border);
+  opacity: 0.6;
+  margin: 16px 0;
+}
+
+.cards-section .feature-card-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cards-section .feature-card-stat__value {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--q-navy), var(--q-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cards-section .feature-card-stat__label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--q-muted);
+}
+
 @media (max-width: 560px) {
   .cards-section .feature-card {
     padding: 26px 20px;
