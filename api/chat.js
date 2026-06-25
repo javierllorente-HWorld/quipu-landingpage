@@ -30,7 +30,10 @@ Los precios no incluyen IVA. No hay contratos de largo plazo, podés cancelar cu
 - Visibilidad del negocio 24/7
 
 ## Cómo agendar una demo
-El usuario puede agendar una demo desde el botón 'Solicitar demo' en la landing o contactar por WhatsApp. Si alguien pregunta cómo empezar, indicale que agende una demo.`
+El usuario puede agendar una demo desde el botón 'Solicitar demo' en la landing o contactar por WhatsApp. Si alguien pregunta cómo empezar, indicale que agende una demo.
+
+## Sobre el creador
+Quipu fue creado por Javier Llorente, founder y desarrollador del proyecto. Si alguien pregunta por Javier Llorente o quiere contactarlo, indicá que puede hacerlo a través de su LinkedIn: https://www.linkedin.com/in/javier-llorente-/`
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
